@@ -16,7 +16,7 @@ def cocktail_sort(content):
     left = left + 1
   return content
 if __name__ == "__main__":
-  num = input("Input num\n").split()
+  num = input("Input the num:\n").split()
   result = list()
   for i in num:
     result.append(int(i))
