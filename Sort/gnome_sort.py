@@ -11,10 +11,12 @@ def gnome_sort(content):
       content[count - 1] = value
       count = count - 1
   return content
-if __name__ == "__main__":
+def main():
   num = input("Input the num:\n").split()
   result = list()
   for i in num:
     result.append(int(i))
   gnome_sort(result)
   print(result)
+if __name__ == "__main__":
+  main()

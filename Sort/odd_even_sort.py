@@ -16,9 +16,12 @@ def odd_even_sort(content):
         sort = False
     if(sort):
       break
-if __name__ == "__main__":
+def main():
   num = input("Input the num:\n").split()
   result = list()
   for i in num:
     result.append(int(i))
   odd_even_sort(result)
+
+if __name__ == "__main__":
+  main()

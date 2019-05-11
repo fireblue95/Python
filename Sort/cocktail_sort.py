@@ -15,9 +15,11 @@ def cocktail_sort(content):
         content[i - 1] = value
     left = left + 1
   return content
-if __name__ == "__main__":
+def main():
   num = input("Input the num:\n").split()
   result = list()
   for i in num:
     result.append(int(i))
   cocktail_sort(result)
+if __name__ == "__main__":
+  main()

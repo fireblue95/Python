@@ -10,9 +10,13 @@ def quick_sort(content):
     else:
       great.append(item)
   return quick_sort(less) + [mid] + quick_sort(great)
-if __name__ == "__main__":
+
+def main():
   num = input("Input the num:\n").split()
   result = list()
   for i in num:
     result.append(int(i))
   quick_sort(result)
+
+if __name__ == "__main__":
+  main()

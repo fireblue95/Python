@@ -7,9 +7,11 @@ def bubble_sort(content):
         content[j + 1] = content[j]
         content[j] = value
   return content
-if __name__ == "__main__":
+def main():
   num = input("Input the num:\n").split()
   result = list()
   for i in num:
     result.append(int(i))
   bubble_sort(result)
+if __name__ == "__main__":
+  main()

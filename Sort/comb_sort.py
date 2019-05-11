@@ -12,9 +12,12 @@ def comb_sort(content):
         content[i + gap] = content[i]
         content[i] = value
         swap = 1
-if __name__ == "__main__":
+def main():
   num = input("Input the num:\n").split()
   result = list()
   for i in num:
     result.append(int(i))
   comb_sort(result)
+
+if __name__ == "__main__":
+  main()
