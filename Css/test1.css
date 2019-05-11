@@ -1,0 +1,45 @@
+nav a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px;
+}
+
+nav > ul {
+    list-style: none;
+    background-color: rgb(230,230,230);
+    margin: 0;
+    padding: 0
+}
+nav a:hover {
+    background-color: rgb(115,115,115);
+    color: white;
+}
+.flex-nav {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.inline-block-nav > li {
+    display: inline-block;
+}
+.inline-block-nav {
+    font-size: 0;
+    text-align: center;
+}
+
+
+.float-nav {
+    float:left;
+    position: relative;
+    left: 50%;
+}
+.float-nav > li{
+    float: left;
+    position: relative;
+    right: 50%
+    
+}
