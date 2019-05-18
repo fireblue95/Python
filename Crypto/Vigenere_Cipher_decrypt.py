@@ -14,8 +14,12 @@ def Vigenere_Cipher_decrypt(result_num, key_num):
 	return content
 def main():
 	result = input("Input the Content:\n")
-	key = input("Input the Key:\n")
+	key_before = input("Input the Key:\n")
 	length = ""
+	key = ""
+	for i in key_before.upper():
+		if(ord(i) >= 65 and ord(i) <= 90):
+			key += i
 	for i in result.upper():
 		if(ord(i) >= 65 and ord(i) <= 90):
 			length += i

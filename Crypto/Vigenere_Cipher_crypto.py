@@ -14,11 +14,15 @@ def Vigenere_Cipher_crypto(content_num, key_num):
 	return result
 def main():	
 	content = input("Input the Content:\n")
-	key = input("Input the Key:\n")
+	key_before = input("Input the Key:\n")
 	length = ""
+	key = ""
 	for i in content.upper():
 		if(ord(i) >= 65 and ord(i) <= 90):
 			length += i
+	for i in key_before.upper():
+		if(ord(i) >= 65 and ord(i) <= 90):
+			key += i
 	if(len(length) > len(key)):
 		count = 0
 		for i in range(len(length)):
