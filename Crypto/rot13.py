@@ -1,4 +1,4 @@
-def rot13(content_num):
+def Rot13(content_num):
 	result = list()
 	for i in range(len(content_num)):
 		if(content_num[i] > 64 and content_num[i] < 78):
@@ -13,7 +13,10 @@ def main():
 	content_num = list()
 	for i in range(len(content)):
 		content_num.append(ord(content[i].upper()))
-	end = "".join(rot13(content_num))
-	print(end.lower())
+	content_result = "".join(Rot13(content_num))
+	if(content.isupper()):
+		print(content_result.upper())
+	else:
+		print(content_result.lower())
 if __name__ == "__main__":
 	main()
