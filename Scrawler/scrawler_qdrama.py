@@ -127,5 +127,9 @@ headers_ts = {
 # Automatic Download Video from this url
 this_url = 'https://www.qdrama.cc/vod/play/id/23098/sid/8/nid/3.html'
 
+# will save to current file path
+# will get all season video
+# just download speed are slowly
+
 start_get_video(this_url)
 
