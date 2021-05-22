@@ -124,6 +124,7 @@ headers_ts = {
 	'sec-fetch-site':'cross-site'
 }
 
+# Automatic Download Video from this url
 this_url = 'https://www.qdrama.cc/vod/play/id/23098/sid/8/nid/3.html'
 
 start_get_video(this_url)
