@@ -76,7 +76,6 @@ def start_get_video(this_url_):
 
 
 def start_merge_video(save_dir_):
-	ts_full_files = list()
 	output_dir_name = 'CompleteWorks'
 	target_path = os.path.join(save_dir_, output_dir_name)
 	if not os.path.exists(target_path):
@@ -89,13 +88,24 @@ def start_merge_video(save_dir_):
 		del all_dirs[all_dirs.index(output_dir_name)]
 
 	for main_path_ in all_dirs:
+		no_data = False
+
 		video_path = os.path.join(save_dir_, main_path_)
-		for i in os.listdir(video_path):
+		ts_full_files = list()
+
+		ts_dir_files = os.listdir(video_path)
+		if len(ts_dir_files) == 0 or (len(ts_dir_files) == 1 and 'index.m3u8' in ts_dir_files):
+			print('No data found in:', video_path.replace('\\', '/'))
+			no_data = True
+
+		for i in ts_dir_files:
 			if '.ts' in i:
 				ts_full_files.append(os.path.normcase(os.path.join(video_path, i)))
 		k = 0
-		with open(os.path.join(target_path, os.path.basename(video_path).replace('_', '.')), 'wb') as ff:
-			for i in trange(len(ts_full_files)):
+		target_full_path = os.path.join(target_path, os.path.basename(video_path).replace('_', '.')).replace('\\', '/')
+
+		with open(target_full_path, 'wb') as ff:
+			for i in range(len(ts_full_files)):
 				now_nn = int(os.path.basename(ts_full_files[i])[3:-3])
 				if now_nn != k:
 					print(f'File missing: edf{k:06d}.ts')
@@ -105,7 +115,8 @@ def start_merge_video(save_dir_):
 				for zz in ts_data:
 					ff.write(zz)
 				k += 1
-
+		if not no_data:
+			print(f'Done: {target_full_path}')
 
 headers = {
 	'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'
@@ -127,9 +138,8 @@ headers_ts = {
 # Automatic Download Video from this url
 this_url = 'https://www.qdrama.cc/vod/play/id/23098/sid/8/nid/3.html'
 
+
 # will save to current file path
 # will get all season video
 # just download speed are slowly
-
 start_get_video(this_url)
-
